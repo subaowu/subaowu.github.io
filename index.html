@@ -1,9 +1,310 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>网络畅通365 - 让网络真正畅通365天</title>
+  <meta name="description" content="前华为网络架构专家宿宝伍，专注中小企业与家庭网络诊断、优化与代维。9项发明专利，广东省科技二等奖，西安电子科技大学特聘专家。">
+  <style>
+    /* 全局样式 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    section {
+      padding: 60px 0;
+    }
+    h1, h2, h3 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1a73e8;
+    }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; text-align: center; }
+    p { margin-bottom: 15px; }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .btn {
+      display: inline-block;
+      background: #1a73e8;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 15px 0;
+      box-shadow: 0 4px 6px rgba(26, 115, 232, 0.2);
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #0d5bb8;
+      transform: translateY(-2px);
+    }
+    .text-center { text-align: center; }
+    .text-gray { color: #666; }
 
-<html>
+    /* 英雄区 */
+    .hero {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-content { flex: 1; min-width: 300px; }
+    .hero-image { flex: 1; min-width: 250px; text-align: center; }
+    .hero-image img { width: 220px; border: 3px solid #1a73e8; }
 
-<head><title>网络畅通365</title></head>
+    /* 背书区 */
+    .credentials {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      margin: 25px 0;
+      gap: 15px;
+    }
+    .cred-icon {
+      width: 50px;
+      height: 50px;
+      background: #e8f0fe;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+      color: #1a73e8;
+    }
 
-<body><h1>官网已上线！</h1></body>
+    /* 服务区 */
+    .services {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .service-card {
+      background: #f8fbff;
+      border-left: 4px solid #1a73e8;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
 
+    /* 见证区 */
+    .testimonials {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* CTA 区 */
+    .cta {
+      background: linear-gradient(135deg, #1a73e8 0%, #0d5bb8 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .cta h2 { color: white; }
+    .cta .btn {
+      background: white;
+      color: #1a73e8;
+      font-size: 20px;
+      padding: 16px 32px;
+    }
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      background: white;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-code img {
+      width: 180px;
+      border: none;
+    }
+
+    /* 页脚 */
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* 手机适配 */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero-content { align-items: center; }
+      .cred-item { flex-direction: column; text-align: center; }
+      .btn { display: block; width: 90%; margin: 20px auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 第一屏：英雄区 -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>让您的网络真正畅通365天</h1>
+          <p>前华为网络架构专家｜专注解决中小企业与家庭网络卡顿、信号死角、安全漏洞</p>
+          <p>✅ 不卖设备，只解决问题<br>✅ 北京六环内可上门，全国支持远程指导</p>
+          <a href="#contact" class="btn">扫码加微信，免费咨询</a>
+          <p class="text-gray">添加即送《家庭/企业网络自查清单》</p>
+        </div>
+        <div class="hero-image">
+          <!-- 替换为您的专业形象照 -->
+          <img src="https://via.placeholder.com/400x500/e8f0fe/1a73e8?text=宿宝伍+专家照" alt="宿宝伍 网络专家">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第二屏：信任背书 -->
+  <section class="credentials-section">
+    <div class="container">
+      <h2>为什么选择我？</h2>
+      <div class="credentials">
+        <div class="cred-item">
+          <div class="cred-icon">🏢</div>
+          <div>
+            <h3>前华为网络架构专家</h3>
+            <p>主导路由器产品线安全架构与IPv6过渡方案设计，技术全球规模商用</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">📜</div>
+          <div>
+            <h3>9项网络技术发明专利</h3>
+            <p>含URL过滤、IPv6过渡、高可靠转发等核心技术，获华为“商业特性专利”</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">🎓</div>
+          <div>
+            <h3>西安电子科技大学特聘专家</h3>
+            <p>受聘为“计算机网络与信息安全国家级实验教学示范中心”特聘专家</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">🏆</div>
+          <div>
+            <h3>广东省科学技术二等奖</h3>
+            <p>因“下一代互联网（IPv6）规模部署关键技术”获奖，支撑国家网络升级</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">📚</div>
+          <div>
+            <h3>参与制定2项行业标准</h3>
+            <p>牵头《路由器/交换机硬件物料信息描述要求》，推动供应链自主可控</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第三屏：服务内容 -->
+  <section class="services-section">
+    <div class="container">
+      <h2>我能为您做什么？</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>🏠 家庭网络体检</h3>
+          <p>• 全屋WiFi覆盖测试（信号强度、干扰分析）<br>• 路由器/光猫性能评估<br>• 安全风险扫描（恶意软件、弱密码）</p>
+          <a href="#contact" class="btn">免费咨询</a>
+        </div>
+        <div class="service-card">
+          <h3>🏢 中小企业组网支持</h3>
+          <p>• 远程办公网络优化（视频会议不卡顿）<br>• 访客网络隔离与安全策略<br>• 月度/年度网络代维（7x24监控+快速响应）</p>
+          <a href="#contact" class="btn">免费咨询</a>
+        </div>
+        <div class="service-card">
+          <h3>🔧 紧急故障排查</h3>
+          <p>• 网络中断、频繁掉线诊断<br>• 勒索病毒/钓鱼攻击应急响应<br>• 设备配置错误修复</p>
+          <a href="#contact" class="btn">紧急联系</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第四屏：客户见证 -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>他们的问题已解决</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          “宝伍老师远程指导我调整了路由器设置，现在全家看4K视频都不卡了！专业又耐心。”<br>
+          <strong>— 深圳·张先生，家庭用户</strong>
+        </div>
+        <div class="testimonial">
+          “公司远程办公总掉线，宿工上门一天就搞定，还做了安全加固。比原厂工程师还细致！”<br>
+          <strong>— 广州·某科技公司IT负责人</strong>
+        </div>
+        <!-- 可替换为真实截图 -->
+        <img src="https://via.placeholder.com/600x200/e8f0fe/1a73e8?text=客户好评截图" alt="客户评价" style="margin-top: 20px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- 第五屏：行动号召 -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta">
+        <h2>网络问题，越拖成本越高</h2>
+        <p>每天因网络卡顿损失的效率，远超一次专业诊断的费用</p>
+        <div class="qr-code">
+          <!-- 替换为您的微信二维码 -->
+          <img src="https://via.placeholder.com/180x180/ffffff/000000?text=微信二维码" alt="添加宝伍微信">
+        </div>
+        <a href="weixin://" class="btn">立即扫码，免费咨询</a>
+        <p>或直接拨打：<strong>139 1120 6802</strong>（微信同号）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 北京蓝海智胜科技有限公司 · 网络畅通365™ 服务品牌</p>
+      <p>官网：wlct365.com | 服务由北京蓝海智胜科技有限公司提供</p>
+    </div>
+  </footer>
+</body>
 </html>
