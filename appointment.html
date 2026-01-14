@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预约网络检测 | 网络畅通365</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%); padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); overflow: hidden; }
+    .header { text-align: center; padding: 25px 20px; background: #1976d2; color: white; }
+    .header h1 { font-size: 24px; margin-bottom: 8px; }
+    .tabs { display: flex; background: #e3f2fd; }
+    .tab { flex: 1; text-align: center; padding: 12px; cursor: pointer; font-weight: bold; }
+    .tab.active { background: white; color: #1976d2; }
+    .content { padding: 25px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: #2c3e50; }
+    input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+    .btn { display: block; width: 100%; background: #4caf50; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+    .btn:hover { background: #45a049; }
+    .footer { text-align: center; padding: 15px; color: #777; font-size: 14px; background: #f8f9fa; }
+    .wechat-tip { background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 20px; }
+    .wechat-tip p { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>免费网络检测预约</h1>
+      <p>五环内上门，出具专业报告</p>
+    </div>
+    
+    <div class="tabs">
+      <div class="tab active" data-type="home">家庭用户</div>
+      <div class="tab" data-type="enterprise">企业用户</div>
+    </div>
+    
+    <div class="content">
+      <!-- 家庭表单 -->
+      <div id="home-form">
+        <div class="form-group">
+          <label for="name-home">姓名</label>
+          <input type="text" id="name-home" placeholder="请输入您的姓名">
+        </div>
+        <div class="form-group">
+          <label for="phone-home">手机号</label>
+          <input type="tel" id="phone-home" placeholder="用于接收预约确认">
+        </div>
+        <div class="form-group">
+          <label for="address-home">地址</label>
+          <textarea id="address-home" rows="2" placeholder="详细地址（例：XX小区X栋X单元）"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="issue-home">主要问题</label>
+          <select id="issue-home">
+            <option value="">请选择问题类型</option>
+            <option value="wifi-slow">Wi-Fi信号弱/卡顿</option>
+            <option value="device-disconnect">设备频繁断连</option>
+            <option value="security">安全风险（如摄像头被入侵）</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('home')">立即预约（免费）</button>
+      </div>
+      
+      <!-- 企业表单（默认隐藏） -->
+      <div id="enterprise-form" style="display:none;">
+        <div class="form-group">
+          <label for="company">公司名称</label>
+          <input type="text" id="company" placeholder="请输入公司全称">
+        </div>
+        <div class="form-group">
+          <label for="contact">联系人</label>
+          <input type="text" id="contact" placeholder="负责人姓名">
+        </div>
+        <div class="form-group">
+          <label for="phone-enterprise">联系电话</label>
+          <input type="tel" id="phone-enterprise" placeholder="用于接收预约确认">
+        </div>
+        <div class="form-group">
+          <label for="address-enterprise">办公地址</label>
+          <textarea id="address-enterprise" rows="2" placeholder="详细地址（例：XX大厦X层）"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="scale">企业规模</label>
+          <select id="scale">
+            <option value="">请选择员工人数</option>
+            <option value="1-10">1-10人</option>
+            <option value="11-50">11-50人</option>
+            <option value="51-200">51-200人</option>
+            <option value="200+">200人以上</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('enterprise')">立即预约（免费）</button>
+      </div>
+      
+      <div class="wechat-tip">
+        <p>✅ 预约成功后，我们将：</p>
+        <p>1. 电话确认时间</p>
+        <p>2. 上门检测并出具《网络健康报告》</p>
+        <p>3. 提供优化方案（不强制消费）</p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>网络畅通365 · 公益网络义诊 · 9项国家发明专利</p>
+      <p>官网：https://wlct365.com</p>
+    </div>
+  </div>
+
+  <script>
+    // 切换表单
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const type = tab.dataset.type;
+        document.getElementById('home-form').style.display = type === 'home' ? 'block' : 'none';
+        document.getElementById('enterprise-form').style.display = type === 'enterprise' ? 'block' : 'none';
+      });
+    });
+
+    // 提交表单（模拟微信跳转）
+    function submitForm(type) {
+      // 获取表单数据
+      let data = {};
+      if (type === 'home') {
+        data = {
+          name: document.getElementById('name-home').value,
+          phone: document.getElementById('phone-home').value,
+          address: document.getElementById('address-home').value,
+          issue: document.getElementById('issue-home').value
+        };
+      } else {
+        data = {
+          company: document.getElementById('company').value,
+          contact: document.getElementById('contact').value,
+          phone: document.getElementById('phone-enterprise').value,
+          address: document.getElementById('address-enterprise').value,
+          scale: document.getElementById('scale').value
+        };
+      }
+
+      // 验证必填项
+      if (!data.phone || !data.address) {
+        alert('请填写手机号和地址！');
+        return;
+      }
+
+      // 模拟发送数据（实际需后端，此处仅前端演示）
+      console.log('预约数据:', { type, ...data });
+
+      // 跳转到微信添加页（关键！）
+      const wechatUrl = 'https://wlct365.com/wechat.html'; // 替换为您的微信二维码链接
+      window.location.href = wechatUrl;
+
+      // 实际场景：可替换为短信通知或邮件
+      // alert('预约成功！客服将30分钟内电话确认，请保持手机畅通。');
+    }
+  </script>
+</body>
+</html>

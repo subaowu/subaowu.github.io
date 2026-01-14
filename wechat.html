@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>添加网络畅通365客服</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      padding: 50px 20px; 
+      background: #f0f8ff;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background: url('qrcode2.jpg') no-repeat center;
+      background-size: contain;
+    }
+    .tip {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>请添加客服微信</h2>
+    <p>长按识别二维码，或点击下方按钮</p>
+    <div class="qr-code"></div>
+    <p class="tip">若未自动跳转，请手动保存二维码到相册后扫码</p>
+    <button onclick="window.location.href='weixin://dl/chat?davidsu2099'" 
+            style="margin-top:20px; padding:12px 30px; background:#07C160; color:white; border:none; border-radius:6px; font-size:16px;">
+      点击添加微信
+    </button>
+  </div>
+
+  <script>
+    // 尝试自动跳转（部分安卓机支持）
+    setTimeout(() => {
+      window.location.href = 'weixin://dl/chat?davidsu2099';
+    }, 1000);
+  </script>
+</body>
+</html>
