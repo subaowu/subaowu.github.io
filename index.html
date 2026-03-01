@@ -240,19 +240,104 @@
     </div>
   </section>
 
-<!-- 权威认证 · 技术实力（已修复居中问题） -->
-<section style="
-  padding: 40px 20px;
-  background: #f8f9fa;
-  margin-top: 30px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-">
-  <h2 style="color: #1976d2; font-size: 28px; margin-bottom: 30px;">
-    权威认证 · 技术实力
-  </h2> 
+<!-- 权威认证 · 技术实力 -->
+<section class="certifications" id="certifications">
+  <style>
+    .certifications {
+      padding: 3rem 1.5rem;
+      background-color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .certifications h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #1a365d;
+      font-weight: 600;
+    }
+    .certification-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cert-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .cert-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .cert-card h3 {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      color: #2d3748;
+    }
+    .cert-card p {
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0.5rem 0;
+    }
+    .cert-card a {
+      display: inline-block;
+      margin-top: 0.6rem;
+      color: #3182ce;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .cert-card a:hover {
+      text-decoration: underline;
+    }
+    .patent-gallery {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 0.5rem 0 1rem;
+    }
+    .patent-gallery img {
+      width: 60px;
+      height: 80px;
+      object-fit: cover;
+      border: 1px solid #eee;
+      border-radius: 3px;
+    }
+    .patent-note {
+      margin-top: 2rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .certifications {
+        padding: 2rem 1rem;
+      }
+      .certifications h2 {
+        font-size: 1.5rem;
+      }
+      .cert-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+
+  <h2>权威认证 · 技术实力</h2>
   <!-- 奖项1：西电特聘专家 -->
   <div style="margin-bottom: 40px; text-align: center;">
     <h3 style="color: #d32f2f; font-size: 22px; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
@@ -328,7 +413,7 @@
       <img src="https://wlct365.com/certificates/patent-url-thumb-EP.jpg" alt="URL过滤专利" style="width: 120px; height: 160px; object-fit: cover; border: 1px solid #eee; border-radius: 4px;">
     </a>
     <a href="https://wlct365.com/certificates/patent-url-filtering-CA.pdf" target="_blank">
-      <img src="wlct365.com/certificates/patent-url-thumb-CA.jpg" alt="URL过滤专利" style="width: 120px; height: 160px; object-fit: cover; border: 1px solid #eee; border-radius: 4px;">
+      <img src="https://wlct365.com/certificates/patent-url-thumb-CA.jpg" alt="URL过滤专利" style="width: 120px; height: 160px; object-fit: cover; border: 1px solid #eee; border-radius: 4px;">
     </a>
     <a href="https://wlct365.com/certificates/patent-url-filtering-JP.pdf" target="_blank">
       <img src="https://wlct365.com/certificates/patent-url-thumb-JP.jpg" alt="URL过滤专利" style="width: 120px; height: 160px; object-fit: cover; border: 1px solid #eee; border-radius: 4px;">
@@ -350,7 +435,7 @@
     点击查看多国知识产权局授权专利证书（部分展示）
   </p>
 </div>
-
+</section>
 
   <!-- 第三屏：服务内容 -->
   <section class="services-section">
@@ -391,31 +476,19 @@
         </div>
         <!-- 可替换为真实视频 -->
  <!-- 客户案例视频 -->
-  <div class="video-container" style="
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    padding-top: 56.25%; /* 16:9 宽高比 */
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-  ">
-    <video controls
-           preload="metadata"
-           poster="https://wlct365.com/video/daoguang-poster.jpg"
-           style="
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             object-fit: contain;
-           ">
-      <source src="https://wlct365.com/video/daoguang.mp4" type="video/mp4">
-      您的浏览器不支持视频播放。
-    </video>
-  </div>
+<div class="bilibili-embed" style="width:100%;max-width:800px;margin:25px auto;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+  <iframe src="https://player.bilibili.com/player.html?bvid=BV12PPgzNEqM" 
+          scrolling="no" 
+          border="0" 
+          frameborder="no" 
+          framespacing="0" 
+          allowfullscreen="true"
+          style="width:100%;height:450px;border:none;"></iframe>
+  <p style="text-align:center;font-size:13px;color:#666;padding:8px;background:#f8f9fa;margin:0;">
+    道广律师事务所客户亲述：雨雪天网络不再卡顿！<br>
+    <small>B站官方嵌入 | 无广告 | 24秒原声</small>
+  </p>
+</div>
       </div>
     </div>
   </section>
